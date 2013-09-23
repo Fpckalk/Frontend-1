@@ -30,7 +30,7 @@ var SCOREAPP = SCOREAPP || {};
 		    { score: "21", team1: "Boomsquad", team1Score: "14", team2: "Burning Snow", team2Score: "7"},
 		    { score: "22", team1: "Boomsquad", team1Score: "14", team2: "Burning Snow", team2Score: "8"},
 		    { score: "23", team1: "Boomsquad", team1Score: "15", team2: "Burning Snow", team2Score: "8"}
-	    ],
+	    ]
 	};
 
 	SCOREAPP.page1 = {
@@ -101,26 +101,26 @@ var SCOREAPP = SCOREAPP || {};
 
 		change: function () {
 			//In var route zit de tekst die na de hashtag (in de URL) staat (page1, page2 of page3 dus)
-            var route = window.location.hash.slice(1);
-            //In var sections zit data-route 
-            var sections = qwery('section[data-route]'); 
-            //In var section zit data-route met de inhoud van route (bijv. data-route='page2')
-            var section = qwery('[data-route=' + route + ']')[0];
+	        	var route = window.location.hash.slice(1);
+	        	//In var sections zit data-route 
+	        	var sections = qwery('section[data-route]'); 
+	        	//In var section zit data-route met de inhoud van route (bijv. data-route='page2')
+	        	var section = qwery('[data-route=' + route + ']')[0];
 
-            if (section) {
-            	//Verwijder alle class actives van de page sections
-            	for (var i=0; i < sections.length; i++){
-            		sections[i].classList.remove('active');
-            	}
+	            	if (section) {
+	            		//Verwijder alle class actives van de page sections
+		            	for (var i=0; i < sections.length; i++){
+		            		sections[i].classList.remove('active');
+		            	}
+	
+		            	//En voeg class active toe aan de huidige section
+		            	section.classList.add('active');
+	            	}
 
-            	//En voeg class active toe aan de huidige section
-            	section.classList.add('active');
-            }
-
-            //Default route
-            if (!route) {
-            	sections[0].classList.add('active');
-            }
+		       	//Default route
+		        if (!route) {
+		        	sections[0].classList.add('active');
+		        }
 
 		}
 
